@@ -1,0 +1,124 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Base styles */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  @apply bg-white text-text-900; /* Light mode base */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  @apply font-display tracking-tight text-text-900;
+}
+
+/* Custom utilities */
+@layer utilities {
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary-600 to-primary-400;
+  }
+  
+  .text-gradient-sub {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-text-600 to-text-400;
+  }
+  
+  /* Glassmorphism Light */
+  .bg-glass {
+    @apply bg-white/70 backdrop-blur-xl border border-bg-200 shadow-sm;
+  }
+  
+  .bg-glass-dark {
+    @apply bg-white/90 backdrop-blur-xl border border-bg-200 shadow-sm;
+  }
+
+  .bg-glass-strong {
+    @apply bg-white/95 backdrop-blur-xl border border-bg-200 shadow-md;
+  }
+  
+  .card-hover {
+    @apply transition-all duration-300 hover:scale-[1.01] hover:shadow-xl hover:shadow-primary-500/10 hover:border-primary-200;
+  }
+  
+  .btn-primary {
+    @apply inline-flex items-center justify-center px-5 py-2.5 text-sm font-semibold text-white 
+           bg-primary-600 rounded-lg shadow-sm
+           hover:bg-primary-700
+           transform transition-all duration-200 hover:shadow-md hover:shadow-primary-500/20
+           focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2;
+  }
+  
+  .btn-secondary {
+    @apply inline-flex items-center justify-center px-5 py-2.5 text-sm font-semibold 
+           text-text-900 bg-white rounded-lg border border-bg-300 shadow-sm
+           hover:bg-bg-50 hover:border-bg-300
+           transform transition-all duration-200
+           focus:outline-none focus:ring-2 focus:ring-bg-200 focus:ring-offset-2;
+  }
+  
+  .section-padding {
+    @apply py-20 md:py-28;
+  }
+  
+  .container-narrow {
+    @apply max-w-4xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+  
+  .container-wide {
+    @apply max-w-6xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  /* Bento Grid Utilities */
+  .bento-grid {
+    @apply grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-[minmax(180px,auto)];
+  }
+  
+  .bento-card {
+    @apply relative overflow-hidden rounded-2xl p-6 md:p-8 
+           bg-bg-50 border border-bg-200
+           transition-all duration-300;
+  }
+  
+  .bento-card:hover {
+    @apply border-primary-200 bg-white shadow-lg shadow-bg-200/50;
+  }
+}
+
+/* Background patterns */
+.bg-grid-pattern {
+  background-image: linear-gradient(to right, #f4f4f5 1px, transparent 1px),
+                    linear-gradient(to bottom, #f4f4f5 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+/* Glow effects */
+.glow-primary {
+  box-shadow: 0 0 60px -10px rgba(59, 130, 246, 0.15);
+}
+
+.glow-purple {
+  box-shadow: 0 0 60px -10px rgba(167, 139, 250, 0.15);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #fff;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #e4e4e7;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #d4d4d8;
+}
